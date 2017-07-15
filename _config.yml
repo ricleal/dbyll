@@ -5,27 +5,27 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
-disqus: dbyll
+disqus: ricferrazleal
 google_analytics: dbyll
-title: dbyll
+title: Tek et al.
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: dbyll
+      title: TEK
 
-description: Stylish Jekyll Theme
+description: Some stuff...
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: dbtek
-  pinterest: asd123
-  linkedin: asd123
-  bio: Your stylish, minimalist theme!
-  email_md5: 726351295ec82e145928582f595aa3aa
+  name: Ricardo M. Ferraz Leal
+  email: ricleal@gmail.com
+  github: ricleal
+  twitter: ricferrazleal
+  pinterest: ricleal
+  linkedin: ricleal
+  bio: Computer Scientist, Data Analyst, Software Architect
+  email_md5: ac2978ac59bb12317324c4a0af421b04
 
 rss_path: feed.xml
 categories_path: categories.html
