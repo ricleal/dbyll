@@ -62,7 +62,7 @@ article .share .twitter:hover {
 #contact-list li:hover .fa-envelope {
 	color: #E93E30;
 }
-#contact-list li:hover .fa-pinterest {
+#contact-list li:hover .fa-facebook {
 	color: #CC2127;
 }
 #contact-list li:hover .fa-rss {
@@ -189,3 +189,9 @@ ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
 
+/* set a max-width for horizontal fluid layout and make it centered */
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 800px; /* or 950px */
+}

@@ -6,7 +6,7 @@ exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 disqus: ricferrazleal
-google_analytics: dbyll
+google_analytics: UA-39648822-1
 title: Tek et al.
 
 defaults:
@@ -14,7 +14,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: TEK
+      title: Tek et al.
 
 description: Some stuff...
 author:
@@ -22,10 +22,11 @@ author:
   email: ricleal@gmail.com
   github: ricleal
   twitter: ricferrazleal
-  pinterest: ricleal
+  facebook: ricleal
   linkedin: ricleal
   bio: Computer Scientist, Data Analyst, Software Architect
   email_md5: ac2978ac59bb12317324c4a0af421b04
+  avatar: /assets/media/bio-photo.jpg
 
 rss_path: feed.xml
 categories_path: categories.html

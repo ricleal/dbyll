@@ -3,7 +3,8 @@ layout: post
 title: Replace Conditional With Polymorphism
 excerpt: Replacing if/then/else with Polymorphism
 categories: [Dev]
-tags: [code quality]
+tags: [cleancode]
+comments: true
 ---
 
 Trying to convince my team to give up on if/then/else & case...

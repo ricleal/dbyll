@@ -2,8 +2,9 @@
 layout: post
 title: Software Engineering Best Practices
 excerpt: A presentation about Software Engineering Best Practices
-categories: [Dev]
-tags: [code quality]
+categories: [Presentation]
+tags: [cleancode]
+comments: true
 ---
 
 Link for the presentation: [(A few) Software Engineering Best Practices](http://ricleal.github.io/Presentations/bestpractices.html):

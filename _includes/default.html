@@ -59,7 +59,8 @@
 			</a>
 			{% endif %}
 			<a class="navbar-brand" href="{{ site.BASE_PATH }}/">
-				<img src="//www.gravatar.com/avatar/{{site.author.email_md5}}?s=35" class="img-circle" />
+				<!-- <img src="//www.gravatar.com/avatar/{{site.author.email_md5}}?s=35" class="img-circle" /> -->
+				<img src="{{site.author.avatar}}" class="img-circle" />
 				{{ site.title }}
 			</a>
 		</div>
@@ -81,6 +82,7 @@
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="{{ site.BASE_PATH}}/about"><i class="fa fa-user"></i>About</a></li>
 			<li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-folder"></i>Categories</a></li>
 			<li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>Tags</a></li>
 			<li class="divider"></li>
@@ -93,8 +95,9 @@
 	</div>
 
 	<div class="col-sm-9 col-sm-offset-3">
-		{{ content }}
-
+		<div class="container-fluid">
+			{{ content }}
+		</div>
 		<footer>
 			<hr/>
 			<p>

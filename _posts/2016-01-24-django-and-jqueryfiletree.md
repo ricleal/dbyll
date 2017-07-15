@@ -4,6 +4,7 @@ title: Django and jQueryFileTree
 excerpt: Server side file picking / browser
 categories: [Dev]
 tags: [Django]
+comments: true
 ---
 
 # Server side file picking / browser
