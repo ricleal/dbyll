@@ -1,0 +1,29 @@
+---
+layout: post
+title: 'Git: Going back in time'
+date: '2015-04-14T10:28:00.000-04:00'
+author: ricleal
+tags:
+- git
+excerpt: '...'
+comments: true
+---
+
+<ol
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin: 1em 0px; padding: 0px 0px 0px 2em;">
+    <li>Testing stuff on a old commit</li>
+</ol>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-bash" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;"><span class="hljs-comment" style="color: #888888;"># This will detach the HEAD, i. e., it leaves no branch checked out:</span><br />git checkout <commit id=""><br /><br /><span class="hljs-comment" style="color: #888888;"># Or:</span><br /><br /><span class="hljs-comment" style="color: #888888;"># This will create a new branch from an old commit. Ideal to play and make new commits.</span><br />git checkout -b old-state <commit id=""><br /></commit></commit></code></pre>
+<ol start="2"
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin: 1em 0px; padding: 0px 0px 0px 2em;">
+    <li>Getting rid of everything done since a specific commit</li>
+</ol>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-bash" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;"><span class="hljs-comment" style="color: #888888;"># If no published commits exist, i. e., it all the commited changes are were not pushed yet!</span><br />git reset --hard <commit id=""><br /></commit></code></pre>
+<ol start="3"
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin: 1em 0px; padding: 0px 0px 0px 2em;">
+    <li>Undo published commits with new commits.</li>
+</ol>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-bash" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;"><span class="hljs-comment" style="color: #888888;"># Delete a commit somewhere in time (the following commits are kept!):</span><br />git revert HEAD~<span class="hljs-number" style="color: #008800;">2</span><br /><br /><span class="hljs-comment" style="color: #888888;"># Delete the last commit:</span><br />git revert HEAD<br /><br /><span class="hljs-comment" style="color: #888888;"># Delete the last two commits:</span><br />git revert HEAD~<span class="hljs-number" style="color: #008800;">2</span>..HEAD</code></pre>

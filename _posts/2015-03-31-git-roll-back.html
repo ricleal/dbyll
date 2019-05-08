@@ -1,0 +1,28 @@
+---
+layout: post
+title: Git Roll Back
+date: '2015-03-31T09:04:00.001-04:00'
+author: ricleal
+tags:
+- git
+excerpt: '...'
+comments: true
+---
+
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    <strong>Rolling back to a previous commit:</strong></div>
+<h2
+    style="border-bottom-color: silver; border-bottom-style: solid; border-bottom-width: 1px; color: #111111; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 2em; line-height: 1em; padding-bottom: 5px;">
+    <span style="font-weight: normal;">Only, </span>and only<span style="font-weight: normal;">, if you are working
+    </span>by your self<span style="font-weight: normal;">!</span></h2>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    (This is dangerous in a collaborative environment: we are rewriting history!)</div>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;">git reset --hard <br />git push -f origin<br /></code></pre>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    Note, if by any reason you want to have access to the lost commits, use:</div>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;">git reflog</code></pre>

@@ -1,0 +1,114 @@
+---
+layout: post
+title: Object-Oriented Design
+date: '2013-03-24T12:57:00.000-04:00'
+author: ricleal
+tags:
+- Programming
+- Clean Code
+- SOLID
+excerpt: '...'
+comments: true
+---
+
+Quoting Uncle Bob Martin's :<br /><br />
+<h2>You know the software is rotting when it starts to exhibit any of the following odors:</h2>
+<div><b>Rigidity</b> – The system is hard to change because every change forces many other changes to other parts of the
+    system.</div>
+<div>
+    <div><b>Fragility</b> – Changes cause the system to break in places that have no conceptual relationship to the part
+        that was changed.</div>
+    <div><b>Immobility</b> – It is hard to disentangle the system into components that can be reused in the other
+        systems.</div>
+    <div><b>Viscosity</b> – Doing things right is harder than doing things wrong. Needless Complexity – The design
+        contains infrastructure that adds no direct benefit.</div>
+    <div><b>Needless Repetition</b> – The design contains repeating structures that could be unified under a single
+        abstraction.</div>
+    <div><b>Opacity</b> – It is hard to read and understand. It does not express its intent well</div>
+</div>
+<div><br /></div>
+<div>
+    <h2>Simple Design</h2>
+    <h3>Extreme Programming's principle of Simple Design, in order of importance:</h3>
+    <div>
+        <ol>
+            <li>Runs all the tests</li>
+            <li>Contains no duplication</li>
+            <li>Expresses the intent of the programmer</li>
+            <li>Minimizes the number of classes and methods</li>
+        </ol>
+    </div>
+    <h3>Truly agile teams don't allow the software to rot:</h3>
+    <div>
+        <ul>
+            <li>Keeping the design clean and simple at all times is the only way to go fast. It makes the design
+                flexible and easy to change.</li>
+            <li>Making a mess will always slow you down the next time that you need to read or change the same code.
+            </li>
+        </ul>
+    </div>
+</div>
+<h2>Architecture</h2>
+<div>
+    <blockquote class="tr_bq">"Architecture is about the important stuff. Whatever that is."</blockquote>
+    <blockquote class="tr_bq">"Architecture is the decisions that you wish you could get right early in&nbsp;a project."
+    </blockquote>
+    <h3>Why do people feel the need to get some things right early in the project?</h3>
+    <div>The answer, of course, is because they perceive those things as hard to change. So you might end up defining
+        architecture as “<i><u>things that people perceive as hard to change</u></i>”.</div>
+    <div>
+        <ul>
+            <li>Big Design Up Front (BDUF), i.e. spinning system designs based on untested hypotheses for many months,
+                is harmful.&nbsp;</li>
+            <ul>
+                <li>BDUF inhibits adapting to change.</li>
+            </ul>
+            <li>Little/Enough Design Up Front (LDUF/EDUF) is good.&nbsp;</li>
+            <ul>
+                <li>With a big project spending a week or even a month thinking about the important things is nothing
+                    wrong.</li>
+            </ul>
+            <li>Agile was a response to BDUF, but not DUF.&nbsp;</li>
+            <ul>
+                <li>Far from “design nothing,” the XP strategy is “design always.”</li>
+            </ul>
+            <li>Whatever designs have been done up front, they should always be open for change.</li>
+            <ul>
+                <li>Let the tests drive the system architecture.</li>
+            </ul>
+        </ul>
+        <h2>Principles of Modular Design</h2>
+    </div>
+</div>
+<div>
+    <h3>Cohesion – higher is better</h3>
+    <div>
+        <ul>
+            <li>Cohesion is a measure of how strongly-related or focused the responsibilities of a single module are.
+            </li>
+        </ul>
+    </div>
+    <h3>Coupling – lower is better</h3>
+    <div>
+        <ul>
+            <li>Coupling or dependency is the degree to which each program module relies on each one of the other
+                modules.</li>
+        </ul>
+        <h2>SOLID Principles</h2>
+        <div>
+            <ul>
+                <li><b>SRP</b>: Single Responsibility Principle</li>
+                <li><b>OCP</b>: Open Closed Principle</li>
+                <li><b>LSP</b>: Liskov Substitution Principle</li>
+                <li><b>ISP</b>: Interface Segregation Principle</li>
+                <li><b>DIP</b>: Dependency Inversion Principle</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>(to be continued...)</div>
+<div><br /></div>
+<div>Adapted from:&nbsp;<a
+        href="http://www.cs.helsinki.fi/u/luontola/tdd-2009/kalvot/09-Object-Oriented-Design.pdf">http://www.cs.helsinki.fi/u/luontola/tdd-2009/kalvot/09-Object-Oriented-Design.pdf</a>
+</div>
+<div><br /></div>

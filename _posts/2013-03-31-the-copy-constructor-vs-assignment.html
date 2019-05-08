@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'C++ : The copy vs move constructor vs the assignment operator'
+date: '2013-03-31T10:32:00.000-04:00'
+author: ricleal
+tags:
+- Programming
+- C++
+excerpt: '...'
+comments: true
+---
+
+The the code and the output below, should be obvious to distinguish when one or the other are invoked. I have also added
+the new C++11 rvalue references to create move constructors and move assignment operators. <br /><br />
+<pre
+    style="background: rgba(238,238,238,0.92); color: black;">#<span style="color: blue;">include</span> <span style="color: #009933;">&lt;iostream&gt;</span><br /><br /><span style="color: blue;">using</span> <span style="font-weight: 700;">namespace</span> std;<br /><br /><span style="font-weight: 700;">class</span> MyClass {<br />    int x;<br />public:<br />    <span style="color: #ff8000;">MyClass</span>() :<br />            <span style="color: #ff8000;">x</span>(0) {<br />        cout &lt;&lt; "Default Constructor" &lt;&lt; endl;<br />    }<br />    <span style="color: #ff8000;">MyClass</span>(int i) :<br />            x(i) {<br />        cout &lt;&lt; "Parameter Constructor" &lt;&lt; endl;<br />    }<br />    <span style="color: #ff8000;">MyClass</span>(const MyClass&amp; other) :<br />            x(other.x) {<br />        cout &lt;&lt; "Copy Constructor" &lt;&lt; endl;<br />    }<br />    <span style="color: #0066ff; font-style: italic;">// Two existing objects!</span><br />    MyClass&amp; <span style="color: blue;">operator</span>=(<span style="font-weight: 700;">const</span> MyClass&amp; other) {<br />        x = other.x;<br />        cout &lt;&lt; "Assignment Operator" &lt;&lt; endl;<br />        return *this;<br />    }<br />    <span style="color: #0066ff; font-style: italic;">//C++11</span><br />    <span style="color: #ff8000;">MyClass</span>(MyClass&amp;&amp; other) {<br />        x = std::move(other.x);<br />        cout &lt;&lt; "Move Constructor" &lt;&lt; endl;<br />    }<br />    <span style="color: #0066ff; font-style: italic;">//C++11</span><br />    MyClass&amp; <span style="color: blue;">operator</span>=(MyClass&amp;&amp; other) {<br />        x = std::move(other.x);<br />        cout &lt;&lt; "Move Operator" &lt;&lt; endl;<br />        return *this;<br />    }<br />};<br /><br /><span style="color: #0066ff; font-style: italic;">// Dummy func to show C++11 move  constructor</span><br />MyClass <span style="color: #ff8000;">f</span>(MyClass m) {<br />    return m;<br />}<br /><br /><span style="font-weight: 700;">int</span> <span style="color: #ff8000;">main</span>(void) {<br />    MyClass m1(1);<br />    MyClass m2 = m1; //copy<br />    MyClass m3(m1); //copy<br />    MyClass m4;<br />    m4 = m1; //Assignment<br /><br />    cout &lt;&lt; "* Move Contructor C++11" &lt;&lt; endl;<br />    MyClass m5(<span style="color: #3333ff; font-weight: 700;">f</span>(<span style="color: #3333ff; font-weight: 700;">MyClass</span>()));<br />    cout &lt;&lt; "* Move Operator C++11" &lt;&lt; endl;<br />    MyClass m6;<br />    m6 = MyClass();<br /><br />    return 0;<br />}<br /><br /></pre>
+And the output.<br /><br />
+<pre
+    style="background: rgba(238,238,238,0.92); color: black;">Parameter Constructor<br />Copy Constructor<br />Copy Constructor<br />Default Constructor<br />Assignment Operator<br />* Move Contructor C++11<br />Default Constructor<br />Move Constructor<br />* Move Operator C++11<br />Default Constructor<br />Default Constructor<br />Move Operator<br /><br /></pre>

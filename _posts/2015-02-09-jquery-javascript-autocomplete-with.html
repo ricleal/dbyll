@@ -1,0 +1,47 @@
+---
+layout: post
+title: JQuery Autocomplete with an AJAX call to a remote JSON
+date: '2015-02-09T12:30:00.000-05:00'
+author: ricleal
+tags:
+- JavaScript
+- Programming
+- Autocomplete
+- JQuery
+excerpt: '...'
+comments: true
+---
+
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    I'm posting this because it took me ages to figure it out...</div>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    I wanted an input field with autcomplete values provided by a remote JSON. My requisites were the following:</div>
+<ul
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin: 1em 0px; padding: 0px 0px 0px 2em;">
+    <li>No dynamic JSON request:</li>
+    <li>Every time the user types a letter no JSON remote call!</li>
+    <li>autocomplete accepts a source : data field, where data can be an URL to a remote location. The problem is that
+        when the user is typing it keeps sending requests to the URL appending ?term=. The idea is that the filtering is
+        done on the server side.... Not what I want... I want the filter to be done on the client side as in case when
+        data is a local variable.</li>
+    <li>Also, because every JSON generation takes more than 1 second, I wanted just one, and a single one request, to
+        the remote location.</li>
+</ul>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    So here the code that sorted it out:</div>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-javascript" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;"><span class="hljs-comment" style="color: #888888;">/* Function to populate the autocomplete from a remote json. <br />   Note the Ajax call which success populates the autocomplete selector<br />*/</span><br /><span class="hljs-function"><span class="hljs-keyword" style="font-weight: bold;">function</span> <span class="hljs-title" style="color: #880000; font-weight: bold;">set_autocomplete</span><span class="hljs-params">(selector, jsonurl)</span> </span>{<br />    $.ajax({<br />        url: jsonurl,<br />        type: <span class="hljs-string" style="color: #880000;">'get'</span>,<br />        dataType: <span class="hljs-string" style="color: #880000;">'json'</span>,<br />        async: <span class="hljs-literal" style="color: #008800;">true</span>,<br />        success: <span class="hljs-function"><span class="hljs-keyword" style="font-weight: bold;">function</span><span class="hljs-params">(data)</span> </span>{<br />            <span class="hljs-comment" style="color: #888888;">//console.log(data);</span><br />            $(selector).autocomplete({<br />                source: data,<br />                minLength: <span class="hljs-number" style="color: #008800;">0</span>,<br />            });<br />        }<br />    });<br />}<br /><br /><span class="hljs-comment" style="color: #888888;">/* This is only called once when the page is loaded :) <br />   Here the URL to the json and the selector are defined.<br />*/</span><br />$(<span class="hljs-function"><span class="hljs-keyword" style="font-weight: bold;">function</span><span class="hljs-params">()</span> </span>{<br />    <span class="hljs-keyword" style="font-weight: bold;">var</span> jsonurl = <span class="hljs-string" style="color: #880000;">"URL TO CALL"</span>;<br />    <span class="hljs-keyword" style="font-weight: bold;">var</span> selector = <span class="hljs-string" style="color: #880000;">'YOUR SELECTOR, e.g.: input'</span>;<br />    <span class="hljs-keyword" style="font-weight: bold;">if</span> ($(selector).is(<span class="hljs-string" style="color: #880000;">'*'</span>)) {<br />        set_autocomplete(selector, jsonurl);<br />    }<br />});<br /></code></pre>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    My JSON looks like this (note that what the user types matches the label but the input field will keep what I have
+    in the value) :</div>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-json" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;">[  <br />   {  <br />      "<span class="hljs-attribute">value</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46477"</span></span>,<br />      "<span class="hljs-attribute">label</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46477 - erererer"</span><br />   </span>},<br />   {  <br />      "<span class="hljs-attribute">value</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46478"</span></span>,<br />      "<span class="hljs-attribute">label</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46478 - erererere"</span><br />   </span>},<br />   {  <br />      "<span class="hljs-attribute">value</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46479"</span></span>,<br />      "<span class="hljs-attribute">label</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46479 - ererererer"</span><br />   </span>},<br />   {  <br />      "<span class="hljs-attribute">value</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46480"</span></span>,<br />      "<span class="hljs-attribute">label</span>":<span class="hljs-value"><span class="hljs-string" style="color: #880000;">"46480 - trhteyretytryteyety"</span><br />   </span>}<br />]<br /></code></pre>
+<div
+    style="color: #444444; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; font-size: 16px; line-height: 24px; margin-bottom: 1em; margin-top: 1em;">
+    And the CSS (just to keep the drop down box with a fixed width and scroll bar):</div>
+<pre
+    style="background-color: #f8f8f8; border-radius: 3px; border: 1px solid rgb(204, 204, 204); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 24px; padding: 5px; white-space: pre-wrap; word-wrap: break-word;"><code class="language-css" style="background: transparent !important; border-radius: 3px; border: 0px !important; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 0.94em; line-height: 1.3em; padding: 0px 3px;"><span class="hljs-class">.ui-autocomplete</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value" style="color: #880000;"> <span class="hljs-number" style="color: #008800;">200px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">overflow-y</span>:<span class="hljs-value" style="color: #880000;"> scroll</span></span>; <span class="hljs-rule"><span class="hljs-attribute">overflow-x</span>:<span class="hljs-value" style="color: #880000;"> hidden</span></span>;<span class="hljs-rule">}</span></span></code></pre>

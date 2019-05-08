@@ -1,0 +1,58 @@
+---
+layout: post
+title: Getting your pocket content delivered to your Kindle touch
+date: '2015-02-09T22:30:00.001-05:00'
+author: ricleal
+tags: ['pocket']
+excerpt: '...'
+comments: true
+---
+
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    I wanted to have the articles I save in my&nbsp;<a href="http://getpocket.com/"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">Pocket</a>&nbsp;emailed to
+    my old kindle touch... I hate reading in LCDs so I used for a while the&nbsp;<a href="http://en2kindle.com/pocket/"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">en2kindle</a>&nbsp;until
+    the point it became paid. It's not expensive but after checking the&nbsp;<a
+        href="https://github.com/tapanpandita/pocket"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">python wrapper for the
+        pocket api</a>,&nbsp;I figured out that implementing something similar shouldn't be too hard...</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    So I came across the&nbsp;<a href="https://github.com/sunetos/kindler"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">kindler</a>&nbsp;on github
+    and decided to give it a go.</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    First think was to have a look at the&nbsp;<a href="http://getpocket.com/developer/docs/authentication"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">Pocket Authentication API
+        Documentation</a>&nbsp;and get a&nbsp;<a href="http://getpocket.com/developer/apps/new"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">consumer key</a>&nbsp;for
+    the Kindler script.</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    I forked the&nbsp;<a href="https://github.com/ricleal/kindler"
+        style="background: 0px 0px; box-sizing: border-box; color: #a0aabf; cursor: pointer;">repo</a>&nbsp;changed a
+    few things in the code because GMail wasn't working.</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    I now leave it running in my mac or Linux Box 24h a day and get stuff delivered almost instantaneously.</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    If you want to give it a go, here a few notes:</div>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    I had to install before:</div>
+<pre
+    style="background: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0.75rem, rgb(245, 247, 250) 0.75rem, rgb(245, 247, 250) 2.75rem, rgb(255, 255, 255) 2.75rem, rgb(255, 255, 255) 4rem) rgb(255, 255, 255); border-radius: 4px; border: 1px solid rgb(211, 218, 234); box-sizing: border-box; color: #333333; font-family: monospace, monospace; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; overflow: auto; padding: 0.66001rem 9.5px 9.5px; word-break: break-all; word-wrap: break-word;"><code style="background-color: transparent; border-radius: 0px; box-sizing: border-box; color: inherit; font-family: monospace, monospace; font-size: inherit; padding: 0px; white-space: pre-wrap;">pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> pyyaml<br />pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> setproctitle<br />pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> requests<br />pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> pyquery<br />pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> humanize<br />pip <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">install</span> gevent<br /></code></pre>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    Get it to work having an http server running:</div>
+<pre
+    style="background: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0.75rem, rgb(245, 247, 250) 0.75rem, rgb(245, 247, 250) 2.75rem, rgb(255, 255, 255) 2.75rem, rgb(255, 255, 255) 4rem) rgb(255, 255, 255); border-radius: 4px; border: 1px solid rgb(211, 218, 234); box-sizing: border-box; color: #333333; font-family: monospace, monospace; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; overflow: auto; padding: 0.66001rem 9.5px 9.5px; word-break: break-all; word-wrap: break-word;"><code style="background-color: transparent; border-radius: 0px; box-sizing: border-box; color: inherit; font-family: monospace, monospace; font-size: inherit; padding: 0px; white-space: pre-wrap;"><span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">python</span> -m SimpleHTTPServer<br /></code></pre>
+<div
+    style="-webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; background-color: white; box-sizing: border-box; color: #373d49; font-family: Georgia, Cambria, serif; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; padding-top: 0.66001rem;">
+    My cfg.yml:</div>
+<pre
+    style="background: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0.75rem, rgb(245, 247, 250) 0.75rem, rgb(245, 247, 250) 2.75rem, rgb(255, 255, 255) 2.75rem, rgb(255, 255, 255) 4rem) rgb(255, 255, 255); border-radius: 4px; border: 1px solid rgb(211, 218, 234); box-sizing: border-box; color: #333333; font-family: monospace, monospace; font-size: 14px; line-height: 28px; margin-bottom: 1.33999rem; overflow: auto; padding: 0.66001rem 9.5px 9.5px; word-break: break-all; word-wrap: break-word;"><code style="background-color: transparent; border-radius: 0px; box-sizing: border-box; color: inherit; font-family: monospace, monospace; font-size: inherit; padding: 0px; white-space: pre-wrap;">api:<br />  consumer: <span class="hljs-comment" style="box-sizing: border-box; color: #586e75;">########</span><br />  redirect: http://localhost:<span class="hljs-number" style="box-sizing: border-box; color: #2aa198;">8000</span>/<br /><br />users:<br />- pocket:<br />    <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">user</span>: <span class="hljs-comment" style="box-sizing: border-box; color: #586e75;">########</span><br />    <span class="hljs-literal" style="box-sizing: border-box;">pass</span>: <span class="hljs-comment" style="box-sizing: border-box; color: #586e75;">########</span><br />  kindle:<br />    email: <span class="hljs-comment" style="box-sizing: border-box; color: #586e75;">########@kindle.com</span><br /><br />smtp:<br />  <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">host</span>: smtp.gmail.com<br />  port: <span class="hljs-number" style="box-sizing: border-box; color: #2aa198;">587</span><br />  <span class="hljs-keyword" style="box-sizing: border-box; color: #859900;">user</span>: <span class="hljs-comment" style="box-sizing: border-box; color: #586e75;">########@gmail.com</span><br />  <span class="hljs-literal" style="box-sizing: border-box;">pass</span>: &lt;<span class="hljs-constant" style="box-sizing: border-box; color: #b58900;">Application</span> <span class="hljs-literal" style="box-sizing: border-box;">password</span>! <span class="hljs-constant" style="box-sizing: border-box; color: #b58900;">Not</span> your <span class="hljs-constant" style="box-sizing: border-box; color: #b58900;">G</span>MAIL!!&gt;</code></pre>
