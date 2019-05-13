@@ -6,7 +6,6 @@ author: ricleal
 tags:
 - Programming
 - C++
-excerpt: '...'
 comments: true
 ---
 
@@ -17,7 +16,7 @@ Code and output should be easy to understand.
 Code:
 
 
-```C++
+```cpp
 #include <iostream>
 
 using namespace std;

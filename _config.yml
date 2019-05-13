@@ -9,6 +9,10 @@ disqus: ricferrazleal
 google_analytics: UA-39648822-1
 title: Tek et al.
 
+# Excerpt Word Length
+# Truncates the excerpt to the specified number of words on the index page
+excerpt_length: 20
+
 defaults:
   -
     scope:
